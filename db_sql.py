@@ -2,9 +2,9 @@ import psycopg2
 import os
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
-from telegram import KeyboardButton
 import json
 class Subs_db():
+
     def __init__(self):
         
         load_dotenv()
@@ -18,7 +18,7 @@ class Subs_db():
         )
         self.conn.autocommit = True
 
-    def insert_user_history_search(self, user_id,vacancy):
+    def insert_user_history_search(self, user_id):
         """
         Получение списка истории пользователя
 

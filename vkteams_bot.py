@@ -4,11 +4,13 @@ import json
 from bot.bot import Bot
 from bot.handler import MessageHandler, StartCommandHandler,BotButtonCommandHandler
 from dotenv import load_dotenv
-
+from ai_agent import VKAgent
+import requests
 
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
-
+ai_agent = VKAgent()
+user_data = {}
 
 logging.basicConfig(
     level=logging.INFO,
@@ -19,51 +21,101 @@ logging.basicConfig(
     ]
 )
 
-commands_list = ['/start', '/help']
+commands_list = ['/start']
+
+def send_picture(bot, chat_id):
+    # Получаем upload URL
+    upload_url = bot.get_file_upload_url(chat_id=chat_id, file_type="image")
+
+    # Загружаем файл
+    with open('images\photo_2025-12-05_05-52-20.jpg', "rb") as f:
+        res = requests.post(upload_url, files={"file": f}).json()
+
+    file_id = res["fileId"]
+
+    # Отправляем файл пользователю
+    bot.send_file(
+        chat_id=chat_id,
+        file_id=file_id,
+        file_type="image"
+    )
 
 def message_cb(bot, event):
     chat_id=event.from_chat
     msg_user = event.text
+    if 'AI_agent' not in user_data.get(chat_id, {}):
+
+        user_data.setdefault(chat_id, {})['AI_agent'] = False
+
     logging.info(f"Получено сообщение от {chat_id}: \"{msg_user}\"")
-    if msg_user and msg_user[0] != '/':
-        msg_bot = 'Мне непонятно твое сообщение. Ты можешь использовать /start'
-        bot.send_text(chat_id=event.from_chat, text=msg_bot)
-    if msg_user[0] == '/' and msg_user not in commands_list:
+    print(user_data[chat_id]['AI_agent'])
+    if user_data[chat_id]['AI_agent'] == True:
+        send_picture(bot, chat_id)
+        msg_bot = ai_agent.ask(msg_user)
+        msg_id =bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+        [{"text": "Стартовое меню", "callbackData": "start_menu", 'style': "attention"}]
+                  ])) 
+                  ).json()['msgId']
+        user_data[chat_id]["main_msg_id"] = msg_id        
+
+    elif msg_user and msg_user[0] != '/':
+        msg_bot = 'Мне непонятно твое сообщение.'
+        msg_id =bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+        [{"text": "Стартовое меню", "callbackData": "start_menu", 'style': "attention"}]
+                  ])) 
+                  ).json()['msgId']
+        user_data[chat_id]["main_msg_id"] = msg_id      
+
+    elif msg_user[0] == '/' and msg_user not in commands_list:
         msg_bot = "Команда не найдена. Попробуй /start"
-        bot.send_text(chat_id=event.from_chat, text=msg_bot)    
+        msg_id =bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+        [{"text": "Стартовое меню", "callbackData": "start_menu", 'style': "attention"}]
+                  ])) 
+                  ).json()['msgId']
+        user_data[chat_id]["main_msg_id"] = msg_id     
+
     
 
 def start_cb(bot, event):
     chat_id=event.from_chat
     msg_user = event.text
+    if chat_id not in user_data:
+        user_data[chat_id] = {}
+    user_data.setdefault(chat_id, {})['AI_agent'] = False
+
     logging.info(f"Получено сообщение от {chat_id}: \"{msg_user}\"")
-    bot.send_text(chat_id=event.from_chat, 
+    msg_id =bot.send_text(chat_id=event.from_chat, 
                   text="Привет, я бот-помощник в твоей работе.",
                   inline_keyboard_markup="{}".format(json.dumps([
                       [{"text": "Задачи на сегодня", "callbackData": "task_today", 'style': "base"}],
                       [{"text": "Календарь событий", "callbackData": "calendar", "style": "attention"}],
                       [{"text": "Отправить письмо", "callbackData": "call_back_id_3", "style": "primary"}],
                       [{"text": "Cделать рассылку", "callbackData": "call_back_id_4", "style": "base"}],
-                      [{"text": "ИИ помощник", "callbackData": "call_back_id_5", "style": "primary"}]
-                  ])))
+                      [{"text": "ИИ помощник", "callbackData": "AI_agent", "style": "primary"}]
+                  ]))).json()['msgId']
+    user_data[chat_id]["main_msg_id"] = msg_id
+                  
 def buttons_answer_cb(bot, event):
     callback_msg = event.data['callbackData']
+    chat_id = event.from_chat
     logging.info(f'{callback_msg}')
-
+    msg_id = user_data[chat_id]["main_msg_id"]
     if event.data['callbackData'] == "task_today":
-        bot.send_text(chat_id=event.from_chat, 
-                    text = '''<b>Список задач на сегодня:</b>
-<ul>
-  <li>Подготовить отчёт по продажам за неделю</li>
-  <li>Проверить входящие письма и ответить на срочные</li>
-  <li>Подготовить презентацию для встречи с клиентом</li>
-  <li>Обновить внутреннюю документацию по проекту</li>
-  <li>Провести код-ревью для коллеги</li>
-</ul>
- ''', parse_mode = 'HTML')
+
+        bot.edit_text(chat_id=event.from_chat, msg_id=msg_id, 
+                    text = '''
+<b>📌 Задачи на сегодня</b>
+''',     inline_keyboard_markup="{}".format(json.dumps([
+        [{"text": "Отчёт по продажам за неделю", "callbackData": "task_ok", 'style': "base"}],
+        [{"text": "Проверить почту и ответить на срочные письма", "callbackData": "task_ok", 'style': "base"}],
+        [{"text": "Подготовить презентацию к встрече с клиентом", "callbackData": "task_ok", 'style': "base"}],
+        [{"text": "Обновить документацию по проекту", "callbackData": "task_ok", 'style': "base"}],
+        [{"text": "Провести код-ревью", "callbackData": "task_ok", 'style': "base"}],
+        [{"text": "Стартовое меню", "callbackData": "start_menu", 'style': "attention"}]
+                  ])), parse_mode = 'HTML')
 
     elif event.data['callbackData'] == "calendar":
-        bot.send_text(chat_id=event.from_chat, 
+        bot.edit_text(chat_id=event.from_chat, msg_id=msg_id,
                     text = '''
 <b>📅 Понедельник, 2 декабря 2025</b>
 <ul>
@@ -80,11 +132,22 @@ def buttons_answer_cb(bot, event):
 </ul>
  ''', parse_mode = 'HTML',
     inline_keyboard_markup="{}".format(json.dumps([
-        [{"text": "->", "callbackData": "next_days_in_week_1", 'style': "base"}]
+        [{"text": "->", "callbackData": "next_days_in_week_1", 'style': "base"}],
+        [{"text": "Стартовое меню", "callbackData": "start_menu", 'style': "attention"}]
+                  ]))
+    )
+    elif event.data['callbackData'] == 'AI_agent':
+        user_data[chat_id]['AI_agent'] = True
+        bot.edit_text(chat_id=event.from_chat, msg_id=msg_id,
+                    text = '''
+Привет! Я ИИ-помощник этого бота, готов помочь с работой в VK Workspace и VKTeams. \nЗадавай свои вопросы!
+ ''', parse_mode = 'HTML',
+    inline_keyboard_markup="{}".format(json.dumps([
+        [{"text": "Стартовое меню", "callbackData": "start_menu", 'style': "attention"}]
                   ]))
     )
     elif event.data['callbackData'] == "next_days_in_week_1":
-        bot.send_text(chat_id=event.from_chat, 
+        bot.edit_text(chat_id=event.from_chat,msg_id=msg_id, 
                     text = '''
 <b>📅 Среда, 4 декабря 2025</b>
 <ul>
@@ -100,13 +163,15 @@ def buttons_answer_cb(bot, event):
   <li>16:00 — Код-ревью</li>
 </ul>
  ''', parse_mode = 'HTML',
-    inline_keyboard_markup="{}".format(json.dumps([
-        [{"text": "->", "callbackData": "next_days_in_week_2", 'style': "base"}]
+    inline_keyboard_markup="{}".format(json.dumps([[
+        {"text": "<-", "callbackData": "calendar", 'style': "base"},
+        {"text": "->", "callbackData": "next_days_in_week_2", 'style': "base"}],
+        [{"text": "Стартовое меню", "callbackData": "start_menu", 'style': "attention"}]
+        
                   ]))
     )
-
     elif event.data['callbackData'] == "next_days_in_week_2":
-        bot.send_text(chat_id=event.from_chat, 
+        bot.edit_text(chat_id=event.from_chat,msg_id=msg_id,
                     text = '''
 <b>📅 Пятница, 6 декабря 2025</b>
 <ul>
@@ -127,8 +192,26 @@ def buttons_answer_cb(bot, event):
   <li>14:00 — Планирование митингов и задач</li>
 </ul>
 
- ''', parse_mode = 'HTML'
+ ''',
+     inline_keyboard_markup="{}".format(json.dumps([
+        [{"text": "<-", "callbackData": "next_days_in_week_1", 'style': "base"}],
+        [{"text": "Стартовое меню", "callbackData": "start_menu", 'style': "attention"}]
+  
+                  ])),
+   parse_mode = 'HTML'
     )
+    elif event.data['callbackData'] == "start_menu":
+            bot.edit_text(chat_id=event.from_chat,msg_id=msg_id,
+                  text="Привет, я бот-помощник в твоей работе.",
+                  inline_keyboard_markup="{}".format(json.dumps([
+                      [{"text": "Задачи на сегодня", "callbackData": "task_today", 'style': "base"}],
+                      [{"text": "Календарь событий", "callbackData": "calendar", "style": "attention"}],
+                      [{"text": "Отправить письмо", "callbackData": "call_back_id_3", "style": "primary"}],
+                      [{"text": "Cделать рассылку", "callbackData": "call_back_id_4", "style": "base"}],
+                      [{"text": "ИИ помощник", "callbackData": "AI_agent", "style": "primary"}]
+                  ])))
+    
+        
 
 def main():
     bot = Bot(token=TOKEN)

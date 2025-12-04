@@ -279,3 +279,368 @@ TypeError: Bot.answer_callback_query() got an unexpected keyword argument 'inlin
 2025-12-04 10:07:23,589 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "п"
 2025-12-04 10:07:26,402 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
 2025-12-04 10:07:26,545 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-04 21:16:22,610 - INFO - Бот запущен
+2025-12-04 21:16:22,610 - INFO - Starting polling.
+2025-12-04 21:18:25,141 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-04 21:18:25,284 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-04 21:37:33,292 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "dfg"
+2025-12-04 21:37:35,045 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-04 21:37:35,181 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-04 21:37:39,038 - INFO - task_today
+2025-12-04 21:37:43,704 - INFO - calendar
+2025-12-04 21:37:45,446 - INFO - next_days_in_week_1
+2025-12-04 21:37:46,513 - INFO - next_days_in_week_2
+2025-12-04 21:38:04,351 - INFO - call_back_id_5
+2025-12-04 21:40:36,183 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-04 21:40:36,336 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-04 21:40:40,554 - INFO - calendar
+2025-12-04 21:40:42,637 - INFO - next_days_in_week_1
+2025-12-04 21:40:56,551 - INFO - next_days_in_week_2
+2025-12-04 21:41:29,235 - INFO - call_back_id_5
+2025-12-05 00:35:58,233 - INFO - next_days_in_week_2
+2025-12-05 00:36:09,852 - INFO - call_back_id_5
+2025-12-05 00:51:00,907 - INFO - calendar
+2025-12-05 00:51:34,586 - INFO - call_back_id_3
+2025-12-05 00:51:39,932 - INFO - call_back_id_4
+2025-12-05 00:51:42,383 - INFO - call_back_id_5
+2025-12-05 01:33:06,342 - INFO - Бот запущен
+2025-12-05 01:33:06,342 - INFO - Starting polling.
+2025-12-05 01:33:07,198 - INFO - next_days_in_week_1
+2025-12-05 01:33:07,377 - INFO - next_days_in_week_2
+2025-12-05 01:33:07,607 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 01:33:07,845 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 01:33:12,769 - INFO - task_today
+2025-12-05 01:38:09,536 - INFO - Бот запущен
+2025-12-05 01:38:09,536 - INFO - Starting polling.
+2025-12-05 01:38:14,271 - INFO - task_today
+2025-12-05 01:38:35,444 - INFO - task_ok
+2025-12-05 01:38:35,810 - INFO - task_ok
+2025-12-05 01:38:36,411 - INFO - task_ok
+2025-12-05 01:38:37,837 - INFO - task_ok
+2025-12-05 01:38:38,498 - INFO - task_ok
+2025-12-05 02:05:39,301 - INFO - Бот запущен
+2025-12-05 02:05:39,302 - INFO - Starting polling.
+2025-12-05 02:05:48,184 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:05:48,335 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:05:50,033 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 56, in buttons_answer_cb
+    chat_id = event.chat_id
+AttributeError: 'Event' object has no attribute 'chat_id'
+2025-12-05 02:06:19,368 - INFO - Бот запущен
+2025-12-05 02:06:19,368 - INFO - Starting polling.
+2025-12-05 02:06:21,294 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:06:21,427 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:06:22,707 - INFO - task_today
+2025-12-05 02:06:33,496 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:06:33,632 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:06:35,207 - INFO - task_today
+2025-12-05 02:06:36,976 - INFO - task_ok
+2025-12-05 02:06:39,303 - INFO - task_ok
+2025-12-05 02:06:39,870 - INFO - task_ok
+2025-12-05 02:06:40,404 - INFO - task_ok
+2025-12-05 02:07:02,211 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:07:02,414 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:09:07,997 - INFO - Бот запущен
+2025-12-05 02:09:07,997 - INFO - Starting polling.
+2025-12-05 02:09:13,627 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:09:13,816 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:09:16,882 - INFO - calendar
+2025-12-05 02:09:18,708 - INFO - next_days_in_week_1
+2025-12-05 02:09:31,636 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:09:31,768 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:09:33,229 - INFO - calendar
+2025-12-05 02:09:36,179 - INFO - next_days_in_week_1
+2025-12-05 02:09:38,309 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:09:38,533 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:13:07,008 - INFO - Бот запущен
+2025-12-05 02:13:07,008 - INFO - Starting polling.
+2025-12-05 02:13:09,664 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:13:09,833 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:13:11,016 - INFO - calendar
+2025-12-05 02:13:12,370 - INFO - next_days_in_week_1
+2025-12-05 02:14:27,015 - INFO - next_days_in_week_2
+2025-12-05 02:14:38,063 - INFO - Бот запущен
+2025-12-05 02:14:38,063 - INFO - Starting polling.
+2025-12-05 02:14:40,584 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:14:40,762 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:14:42,099 - INFO - calendar
+2025-12-05 02:14:44,665 - INFO - next_days_in_week_1
+2025-12-05 02:15:04,516 - INFO - next_days_in_week_1
+2025-12-05 02:15:25,824 - INFO - Бот запущен
+2025-12-05 02:15:25,824 - INFO - Starting polling.
+2025-12-05 02:15:30,180 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:15:30,326 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:15:31,955 - INFO - calendar
+2025-12-05 02:15:33,298 - INFO - next_days_in_week_1
+2025-12-05 02:15:47,993 - INFO - next_days_in_week_2
+2025-12-05 02:15:49,619 - INFO - next_days_in_week_1
+2025-12-05 02:16:22,724 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:16:22,859 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:16:29,092 - INFO - task_today
+2025-12-05 02:16:31,978 - INFO - task_ok
+2025-12-05 02:16:32,863 - INFO - task_ok
+2025-12-05 02:16:33,276 - INFO - task_ok
+2025-12-05 02:16:33,700 - INFO - task_ok
+2025-12-05 02:16:39,830 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:16:40,001 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:16:41,674 - INFO - task_today
+2025-12-05 02:17:11,794 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:17:11,955 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:18:33,992 - INFO - task_today
+2025-12-05 02:18:34,194 - INFO - task_today
+2025-12-05 02:20:56,722 - INFO - task_ok
+2025-12-05 02:24:37,304 - INFO - Бот запущен
+2025-12-05 02:24:37,304 - INFO - Starting polling.
+2025-12-05 02:24:39,505 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:24:39,707 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:24:41,265 - INFO - calendar
+2025-12-05 02:24:50,685 - INFO - next_days_in_week_1
+2025-12-05 02:24:56,290 - INFO - start_menu
+2025-12-05 02:25:23,072 - INFO - Бот запущен
+2025-12-05 02:25:23,072 - INFO - Starting polling.
+2025-12-05 02:25:26,533 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:25:26,689 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 02:25:27,810 - INFO - task_today
+2025-12-05 02:25:31,269 - INFO - start_menu
+2025-12-05 02:25:33,115 - INFO - calendar
+2025-12-05 02:25:44,546 - INFO - next_days_in_week_1
+2025-12-05 02:25:46,199 - INFO - start_menu
+2025-12-05 02:25:48,427 - INFO - call_back_id_5
+2025-12-05 02:25:51,697 - INFO - calendar
+2025-12-05 05:59:53,344 - INFO - Бот запущен
+2025-12-05 05:59:53,344 - INFO - Starting polling.
+2025-12-05 06:00:09,754 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 47, in start_cb
+    user_data[chat_id]['AI_agent'] = False
+KeyError: 'v.penkov@ayanation.bizml.ru'
+2025-12-05 06:01:23,953 - INFO - Бот запущен
+2025-12-05 06:01:23,953 - INFO - Starting polling.
+2025-12-05 06:01:31,691 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 48, in start_cb
+    user_data[chat_id]['AI_agent'] = False
+KeyError: 'v.penkov@ayanation.bizml.ru'
+2025-12-05 06:01:49,325 - INFO - Бот запущен
+2025-12-05 06:01:49,326 - INFO - Starting polling.
+2025-12-05 06:01:50,672 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 48, in start_cb
+    user_data[chat_id]['AI_agent'] = False
+KeyError: 'v.penkov@ayanation.bizml.ru'
+2025-12-05 06:03:26,385 - INFO - Бот запущен
+2025-12-05 06:03:26,385 - INFO - Starting polling.
+2025-12-05 06:03:28,216 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:03:28,352 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:03:28,352 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 40, in message_cb
+    bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+UnboundLocalError: local variable 'msg_bot' referenced before assignment
+2025-12-05 06:03:30,869 - INFO - AI_agent
+2025-12-05 06:03:39,658 - INFO - start_menu
+2025-12-05 06:06:05,430 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:06:05,623 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:06:05,623 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 40, in message_cb
+    bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+UnboundLocalError: local variable 'msg_bot' referenced before assignment
+2025-12-05 06:06:11,172 - INFO - AI_agent
+2025-12-05 06:06:48,067 - INFO - Бот запущен
+2025-12-05 06:06:48,069 - INFO - Starting polling.
+2025-12-05 06:06:53,577 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:06:53,746 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:06:53,746 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 40, in message_cb
+    bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+UnboundLocalError: local variable 'msg_bot' referenced before assignment
+2025-12-05 06:06:56,452 - INFO - AI_agent
+2025-12-05 06:07:15,263 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "не могу отправить сообщение"
+2025-12-05 06:09:09,819 - INFO - Бот запущен
+2025-12-05 06:09:09,819 - INFO - Starting polling.
+2025-12-05 06:09:12,366 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:09:12,545 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:09:12,545 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 41, in message_cb
+    bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+UnboundLocalError: local variable 'msg_bot' referenced before assignment
+2025-12-05 06:09:14,611 - INFO - AI_agent
+2025-12-05 06:09:18,565 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "помогои"
+2025-12-05 06:09:52,761 - INFO - Бот запущен
+2025-12-05 06:09:52,761 - INFO - Starting polling.
+2025-12-05 06:09:54,715 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:09:54,846 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:09:54,846 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 41, in message_cb
+    bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+UnboundLocalError: local variable 'msg_bot' referenced before assignment
+2025-12-05 06:09:56,675 - INFO - AI_agent
+2025-12-05 06:10:00,438 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "помоги"
+2025-12-05 06:10:00,438 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 33, in message_cb
+    msg_bot = ai_agent(msg_user)
+TypeError: 'VKAgent' object is not callable
+2025-12-05 06:10:13,162 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:10:13,342 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:10:13,342 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 41, in message_cb
+    bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+UnboundLocalError: local variable 'msg_bot' referenced before assignment
+2025-12-05 06:10:15,299 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "а"
+2025-12-05 06:10:18,619 - INFO - start_menu
+2025-12-05 06:10:40,425 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:10:40,566 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:10:40,566 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 41, in message_cb
+    bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+UnboundLocalError: local variable 'msg_bot' referenced before assignment
+2025-12-05 06:11:27,126 - INFO - Бот запущен
+2025-12-05 06:11:27,127 - INFO - Starting polling.
+2025-12-05 06:11:31,414 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "й"
+2025-12-05 06:11:31,414 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 31, in message_cb
+    print(user_data[chat_id]['AI_agent'])
+KeyError: 'v.penkov@ayanation.bizml.ru'
+2025-12-05 06:16:12,416 - INFO - Бот запущен
+2025-12-05 06:16:12,416 - INFO - Starting polling.
+2025-12-05 06:16:18,648 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:16:18,845 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 06:16:18,845 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 44, in message_cb
+    bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
+UnboundLocalError: local variable 'msg_bot' referenced before assignment
+2025-12-05 06:17:36,649 - INFO - Бот запущен
+2025-12-05 06:17:36,649 - INFO - Starting polling.
+2025-12-05 06:17:41,050 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "а"
+2025-12-05 06:17:44,192 - INFO - start_menu
+2025-12-05 06:17:44,192 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 78, in buttons_answer_cb
+    msg_id = user_data[chat_id]["main_msg_id"]
+KeyError: 'main_msg_id'
+2025-12-05 06:21:18,612 - INFO - Бот запущен
+2025-12-05 06:21:18,613 - INFO - Starting polling.
+2025-12-05 06:21:22,503 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "f"
+2025-12-05 06:21:24,339 - INFO - start_menu
+2025-12-05 06:21:31,921 - INFO - call_back_id_5
+2025-12-05 06:23:10,554 - INFO - Бот запущен
+2025-12-05 06:23:10,554 - INFO - Starting polling.
+2025-12-05 06:23:13,936 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "g"
+2025-12-05 06:23:15,527 - INFO - start_menu
+2025-12-05 06:23:19,106 - INFO - AI_agent
+2025-12-05 06:23:28,447 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "помоги"
+2025-12-05 06:23:28,448 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 36, in message_cb
+    msg_bot = ai_agent(msg_user)
+TypeError: 'VKAgent' object is not callable
+2025-12-05 06:24:36,602 - INFO - Бот запущен
+2025-12-05 06:24:36,602 - INFO - Starting polling.
+2025-12-05 06:24:57,657 - INFO - Бот запущен
+2025-12-05 06:24:57,658 - INFO - Starting polling.
+2025-12-05 06:25:15,080 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "f"
+2025-12-05 06:25:17,045 - INFO - start_menu
+2025-12-05 06:25:19,181 - INFO - AI_agent
+2025-12-05 06:25:26,279 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "помоги"
+2025-12-05 06:26:20,309 - INFO - start_menu
+2025-12-05 06:42:27,107 - INFO - Бот запущен
+2025-12-05 06:42:27,108 - INFO - Starting polling.
+2025-12-05 06:42:51,600 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "jh"
+2025-12-05 06:42:54,234 - INFO - start_menu
+2025-12-05 06:42:57,808 - INFO - AI_agent
+2025-12-05 06:45:03,789 - INFO - Бот запущен
+2025-12-05 06:45:03,789 - INFO - Starting polling.
+2025-12-05 06:45:51,116 - INFO - Бот запущен
+2025-12-05 06:45:51,116 - INFO - Starting polling.
+2025-12-05 06:46:28,193 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+TypeError: send_picture() got an unexpected keyword argument 'event'
+2025-12-05 06:47:59,808 - INFO - Бот запущен
+2025-12-05 06:47:59,810 - INFO - Starting polling.
+2025-12-05 06:48:01,789 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\test.py", line 30, in send_picture
+    upload_url = bot.get_file_upload_url(chat_id=chat_id, file_type="image")
+AttributeError: 'Bot' object has no attribute 'get_file_upload_url'

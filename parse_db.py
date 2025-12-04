@@ -1,5 +1,5 @@
 import re
-from subcription_sql import Subs_db
+from db_sql import Subs_db
 from playwright.async_api import async_playwright
 from datetime import datetime, timedelta
 import asyncio
@@ -11,8 +11,8 @@ db = Subs_db() # Объявление объекта класса БД вака�
     
 async def your_pars_function()    -> None:
 
-    db.delete_all_vacancies() # Предварительная очистка всей таблицы вакансий
-    url = f"https://rabota.ykt.ru/"
+    db.delete_all() # Предварительная очистка всей таблицы вакансий
+    url = f""
     async with async_playwright() as playwright:
         browser = await playwright.chromium.launch()
         page = await browser.new_page()
@@ -22,19 +22,6 @@ async def your_pars_function()    -> None:
         vacancy_count_text= await vacancy_count_element.inner_text()
         vacancy_count=int(vacancy_count_text)
         page_count=-(-vacancy_count//20)
-        # while True:
-        #         category_list=await page.query_selector_all('.r-category_item')
-        #         global categories 
-        #         categories = []
-        #         for elem in category_list:
-        #             exclude_elem = await elem.query_selector('.r-category_item_count')
-        #             exclude_text = await exclude_elem.inner_text()
-        #             category_text=await elem.inner_text()
-        #             category_text = category_text.replace(exclude_text,'').strip()
-        #             categories.append(category_text)
-        #         print(categories)    
-        #         if True:
-        #             break
         for i in range(1,page_count+1):
             print(i)
             await fetch_vacancies(i,page)
@@ -78,8 +65,7 @@ async def fetch_vacancies(page_num,page):
     try:
         url = f"https://rabota.ykt.ru/?page={page_num}"
         print(url)
-        # async with async_playwright() as playwright:
-            # browser = await playwright.chromium.launch()
+
         
         await page.goto(url)
         await page.wait_for_load_state('load', timeout=60000)
