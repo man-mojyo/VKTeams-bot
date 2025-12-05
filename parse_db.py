@@ -4,7 +4,6 @@ from playwright.async_api import async_playwright
 from datetime import datetime, timedelta
 import asyncio
 import json
-#Пример как можно сделать
 
 
 db = Subs_db() # Объявление объекта класса БД вакансий и подписок

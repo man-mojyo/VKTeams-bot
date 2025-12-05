@@ -23,22 +23,7 @@ logging.basicConfig(
 
 commands_list = ['/start']
 
-def send_picture(bot, chat_id):
-    # Получаем upload URL
-    upload_url = bot.get_file_upload_url(chat_id=chat_id, file_type="image")
 
-    # Загружаем файл
-    with open('images\photo_2025-12-05_05-52-20.jpg', "rb") as f:
-        res = requests.post(upload_url, files={"file": f}).json()
-
-    file_id = res["fileId"]
-
-    # Отправляем файл пользователю
-    bot.send_file(
-        chat_id=chat_id,
-        file_id=file_id,
-        file_type="image"
-    )
 
 def message_cb(bot, event):
     chat_id=event.from_chat
@@ -50,7 +35,7 @@ def message_cb(bot, event):
     logging.info(f"Получено сообщение от {chat_id}: \"{msg_user}\"")
     print(user_data[chat_id]['AI_agent'])
     if user_data[chat_id]['AI_agent'] == True:
-        send_picture(bot, chat_id)
+
         msg_bot = ai_agent.ask(msg_user)
         msg_id =bot.send_text(chat_id=event.from_chat, text=msg_bot,inline_keyboard_markup="{}".format(json.dumps([
         [{"text": "Стартовое меню", "callbackData": "start_menu", 'style': "attention"}]

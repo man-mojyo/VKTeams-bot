@@ -644,3 +644,27 @@ Traceback (most recent call last):
   File "c:\Users\Vlad\Desktop\VKTeams bot\test.py", line 30, in send_picture
     upload_url = bot.get_file_upload_url(chat_id=chat_id, file_type="image")
 AttributeError: 'Bot' object has no attribute 'get_file_upload_url'
+2025-12-05 12:21:39,890 - INFO - Бот запущен
+2025-12-05 12:21:39,891 - INFO - Starting polling.
+2025-12-05 12:21:43,622 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 12:21:43,874 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 12:22:05,828 - INFO - task_today
+2025-12-05 12:22:22,223 - INFO - start_menu
+2025-12-05 12:22:24,171 - INFO - calendar
+2025-12-05 12:22:26,227 - INFO - next_days_in_week_1
+2025-12-05 12:22:40,181 - INFO - next_days_in_week_2
+2025-12-05 12:22:49,560 - INFO - next_days_in_week_1
+2025-12-05 12:22:52,050 - INFO - start_menu
+2025-12-05 12:22:57,937 - INFO - AI_agent
+2025-12-05 12:23:23,049 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "Что такое VK workspace"
+2025-12-05 12:23:23,049 - ERROR - Exception while dispatching event!
+Traceback (most recent call last):
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\dispatcher.py", line 25, in dispatch
+    handler.handle(event=event, dispatcher=self)
+  File "C:\Users\Vlad\Desktop\VKTeams bot\VK_bot_venv\lib\site-packages\bot\handler.py", line 23, in handle
+    self.callback(bot=dispatcher.bot, event=event)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 53, in message_cb
+    send_picture(bot, chat_id)
+  File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 28, in send_picture
+    upload_url = bot.get_file_upload_url(chat_id=chat_id, file_type="image")
+AttributeError: 'Bot' object has no attribute 'get_file_upload_url'
