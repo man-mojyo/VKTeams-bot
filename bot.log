@@ -668,3 +668,18 @@ Traceback (most recent call last):
   File "c:\Users\Vlad\Desktop\VKTeams bot\vkteams_bot.py", line 28, in send_picture
     upload_url = bot.get_file_upload_url(chat_id=chat_id, file_type="image")
 AttributeError: 'Bot' object has no attribute 'get_file_upload_url'
+2025-12-05 12:24:06,381 - INFO - Бот запущен
+2025-12-05 12:24:06,382 - INFO - Starting polling.
+2025-12-05 12:24:10,270 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 12:24:10,407 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 12:24:12,048 - INFO - AI_agent
+2025-12-05 12:24:17,134 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "что такое вк"
+2025-12-05 12:27:52,533 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 12:27:52,721 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "/start"
+2025-12-05 12:27:58,352 - INFO - task_today
+2025-12-05 12:28:03,711 - INFO - start_menu
+2025-12-05 12:28:05,450 - INFO - calendar
+2025-12-05 12:28:21,941 - INFO - start_menu
+2025-12-05 12:28:23,884 - INFO - AI_agent
+2025-12-05 12:28:28,100 - INFO - Получено сообщение от v.penkov@ayanation.bizml.ru: "а"
+2025-12-05 12:28:52,899 - INFO - start_menu
